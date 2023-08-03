@@ -1,0 +1,28 @@
+version: '3.6'
+
+services:
+  app:
+    image: dockette/web:php-82
+    volumes:
+      - .:/srv
+    ports:
+      - 8080:80
+    depends_on:
+      - database
+    environment:
+      NETTE_DEBUG: 1
+
+  database:
+    image: postgres:15
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: contributte
+      POSTGRES_DB: contributte
+
+  adminer:
+    image: dockette/adminer:dg
+    ports:
+      - 8081:80
+    depends_on:
+      - database

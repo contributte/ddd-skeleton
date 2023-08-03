@@ -1,0 +1,87 @@
+# ======================================
+# Config ===============================
+php:
+	date.timezone: Europe/Prague
+	# session.save_path: %tempDir%/session
+
+# ======================================
+# Parameters ===========================
+parameters:
+
+# ======================================
+# Extension ============================
+extensions:
+	# Messenger
+	contributte.messenger: Contributte\Messenger\DI\MessengerExtension
+
+	# Console
+	contributte.console: Contributte\Console\DI\ConsoleExtension(%consoleMode%)
+
+	# Event Dispatcher
+	contributte.events: Contributte\EventDispatcher\DI\EventDispatcherExtension
+
+	# Nettrine
+	nettrine.annotations: Nettrine\Annotations\DI\AnnotationsExtension
+	nettrine.cache: Nettrine\Cache\DI\CacheExtension
+	nettrine.migrations: Nettrine\Migrations\DI\MigrationsExtension
+	nettrine.fixtures: Nettrine\Fixtures\DI\FixturesExtension
+
+	# Nettrine DBAL
+	nettrine.dbal: Nettrine\DBAL\DI\DbalExtension
+	nettrine.dbal.console: Nettrine\DBAL\DI\DbalConsoleExtension(%consoleMode%)
+
+	# Nettrine ORM
+	nettrine.orm: Nettrine\ORM\DI\OrmExtension
+	nettrine.orm.cache: Nettrine\ORM\DI\OrmCacheExtension
+	nettrine.orm.console: Nettrine\ORM\DI\OrmConsoleExtension(%consoleMode%)
+	nettrine.orm.attributes: Nettrine\ORM\DI\OrmAttributesExtension
+
+# ======================================
+# Extensions (config) ==================
+nettrine.dbal:
+	debug:
+		panel: %debugMode%
+	configuration:
+	connection:
+		driver: pdo_pgsql
+		host: database
+		user: postgres
+		password: contributte
+		dbname: contributte
+		port: 5432
+		serverVersion: 15.0
+
+nettrine.orm:
+	entityManagerDecoratorClass: Nettrine\Extra\EntityManager
+	configuration:
+		autoGenerateProxyClasses: %debugMode%
+
+nettrine.orm.attributes:
+	mapping:
+		App\Domain: %appDir%/Domain
+
+nettrine.migrations:
+	table: doctrine_migrations
+	column: version
+	directory: %appDir%/../db/Migrations
+	namespace: Database\Migrations
+	versionsOrganization: null
+
+contributte.messenger:
+	bus:
+		commandBus:
+		queryBus:
+
+	transport:
+		sync:
+			dsn: "sync://"
+
+	routing:
+		App\Domain\User\CreateUserCommand: [sync]
+		App\Model\Database\QueryCommand: [sync]
+
+# ======================================
+# Services =============================
+services:
+	- App\Domain\User\CreateUserHandler
+	- App\Model\Database\QueryHandler
