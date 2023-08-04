@@ -5,7 +5,9 @@
 /vendor
 
 # Nette
-/var
+/var/*
+!/var/tmp/.gitignore
+!/var/log/.gitignore
 /config/local.neon
 
 # Docker
