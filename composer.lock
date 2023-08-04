@@ -3422,12 +3422,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/contributte/doctrine-extra.git",
-                "reference": "18f6f56600078f5a658547a149c15defc302d18a"
+                "reference": "06a2b2a6549a16a74b2d89992494d4952d97ceb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contributte/doctrine-extra/zipball/18f6f56600078f5a658547a149c15defc302d18a",
-                "reference": "18f6f56600078f5a658547a149c15defc302d18a",
+                "url": "https://api.github.com/repos/contributte/doctrine-extra/zipball/06a2b2a6549a16a74b2d89992494d4952d97ceb6",
+                "reference": "06a2b2a6549a16a74b2d89992494d4952d97ceb6",
                 "shasum": ""
             },
             "require": {
@@ -3487,7 +3487,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-08-03T16:00:38+00:00"
+            "time": "2023-08-03T16:48:17+00:00"
         },
         {
             "name": "nettrine/fixtures",
@@ -6115,16 +6115,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.23.0",
+            "version": "1.23.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "a2b24135c35852b348894320d47b3902a94bc494"
+                "reference": "846ae76eef31c6d7790fac9bc399ecee45160b26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/a2b24135c35852b348894320d47b3902a94bc494",
-                "reference": "a2b24135c35852b348894320d47b3902a94bc494",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/846ae76eef31c6d7790fac9bc399ecee45160b26",
+                "reference": "846ae76eef31c6d7790fac9bc399ecee45160b26",
                 "shasum": ""
             },
             "require": {
@@ -6156,9 +6156,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.23.0"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.23.1"
             },
-            "time": "2023-07-23T22:17:56+00:00"
+            "time": "2023-08-03T16:32:59+00:00"
         },
         {
             "name": "phpstan/phpstan",
