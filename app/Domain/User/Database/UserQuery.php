@@ -5,6 +5,9 @@ namespace App\Domain\User\Database;
 use Doctrine\ORM\QueryBuilder;
 use Nettrine\Extra\Query\AbstractQuery;
 
+/**
+ * @extends AbstractQuery<array<User>>
+ */
 class UserQuery extends AbstractQuery
 {
 

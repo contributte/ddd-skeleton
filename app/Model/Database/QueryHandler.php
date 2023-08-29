@@ -15,6 +15,10 @@ class QueryHandler
 	{
 	}
 
+	/**
+	 * @template T
+	 * @param QueryCommand<T> $command
+	 */
 	public function __invoke(QueryCommand $command): mixed
 	{
 		$qb = $command->query->doQuery($this->em);

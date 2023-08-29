@@ -2,19 +2,30 @@
 
 namespace App\Model\Database;
 
-use Nettrine\Extra\Query\AbstractQuery;
+use Nettrine\Extra\Query\Queryable;
 
+/**
+ * @template T
+ */
 class QueryCommand
 {
 
+	/**
+	 * @param Queryable<T> $query
+	 */
 	public function __construct(
-		public AbstractQuery $query,
+		public Queryable $query,
 		public QueryFetchMode $fetchMode = QueryFetchMode::ALL
 	)
 	{
 	}
 
-	public static function fetchAll(AbstractQuery $query): self
+	/**
+	 * @template X
+	 * @param Queryable<X> $query
+	 * @return self<X>
+	 */
+	public static function fetchAll(Queryable $query): self
 	{
 		return new self($query, QueryFetchMode::ALL);
 	}

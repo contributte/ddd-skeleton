@@ -3,11 +3,12 @@
 namespace App\UI\Home;
 
 use App\Domain\User\CreateUserCommand;
+use App\Domain\User\Database\User;
 use App\Domain\User\Database\UserQuery;
+use App\Model\Bus\QueryBus;
 use App\Model\Database\QueryCommand;
 use App\UI\BasePresenter;
 use Contributte\Messenger\Bus\CommandBus;
-use Contributte\Messenger\Bus\QueryBus;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Nette\Application\UI\Form;
 use Nette\DI\Attributes\Inject;
@@ -25,7 +26,12 @@ class HomePresenter extends BasePresenter
 
 	public function actionDefault(): void
 	{
-		$this->template->users = $this->queryBus->query(QueryCommand::fetchAll(new UserQuery()));
+		/** @var array<User> $users */
+		$users = $this->queryBus->typedQuery(
+			QueryCommand::fetchAll(new UserQuery())
+		);
+
+		$this->template->users = $users;
 	}
 
 	protected function createComponentUserForm(): Form

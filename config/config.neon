@@ -78,6 +78,7 @@ contributte.messenger:
 	bus:
 		commandBus:
 		queryBus:
+			wrapper: App\Model\Bus\QueryBus
 
 	transport:
 		sync:
