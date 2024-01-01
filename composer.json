@@ -27,7 +27,7 @@
     "nettrine/fixtures": "^0.8.0",
     "nettrine/extra": "^0.1.0",
 
-    "symfony/redis-messenger": "^6.2.10",
+    "symfony/redis-messenger": "^7.0.2",
     "symfony/doctrine-messenger": "^7.0.0"
   },
   "require-dev": {
