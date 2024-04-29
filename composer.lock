@@ -5083,16 +5083,16 @@
         },
         {
             "name": "symfony/redis-messenger",
-            "version": "v7.0.4",
+            "version": "v7.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/redis-messenger.git",
-                "reference": "0f5fc1c53079fa0028fbbe1491f5c9c9cdf478df"
+                "reference": "cf673d870c500c3a6d9ffe613b4a9aa68812b722"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/redis-messenger/zipball/0f5fc1c53079fa0028fbbe1491f5c9c9cdf478df",
-                "reference": "0f5fc1c53079fa0028fbbe1491f5c9c9cdf478df",
+                "url": "https://api.github.com/repos/symfony/redis-messenger/zipball/cf673d870c500c3a6d9ffe613b4a9aa68812b722",
+                "reference": "cf673d870c500c3a6d9ffe613b4a9aa68812b722",
                 "shasum": ""
             },
             "require": {
@@ -5130,7 +5130,7 @@
             "description": "Symfony Redis extension Messenger Bridge",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/redis-messenger/tree/v7.0.4"
+                "source": "https://github.com/symfony/redis-messenger/tree/v7.0.7"
             },
             "funding": [
                 {
@@ -5146,7 +5146,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-02-07T14:11:38+00:00"
+            "time": "2024-04-28T11:44:19+00:00"
         },
         {
             "name": "symfony/service-contracts",
