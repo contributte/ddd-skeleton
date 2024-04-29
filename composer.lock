@@ -3974,16 +3974,16 @@
         },
         {
             "name": "symfony/clock",
-            "version": "v7.0.5",
+            "version": "v7.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/clock.git",
-                "reference": "8b9d08887353d627d5f6c3bf3373b398b49051c2"
+                "reference": "2008671acb4a30b01c453de193cf9c80549ebda6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/clock/zipball/8b9d08887353d627d5f6c3bf3373b398b49051c2",
-                "reference": "8b9d08887353d627d5f6c3bf3373b398b49051c2",
+                "url": "https://api.github.com/repos/symfony/clock/zipball/2008671acb4a30b01c453de193cf9c80549ebda6",
+                "reference": "2008671acb4a30b01c453de193cf9c80549ebda6",
                 "shasum": ""
             },
             "require": {
@@ -4028,7 +4028,7 @@
                 "time"
             ],
             "support": {
-                "source": "https://github.com/symfony/clock/tree/v7.0.5"
+                "source": "https://github.com/symfony/clock/tree/v7.0.7"
             },
             "funding": [
                 {
@@ -4044,7 +4044,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-03-02T12:46:12+00:00"
+            "time": "2024-04-18T09:29:19+00:00"
         },
         {
             "name": "symfony/console",
@@ -4433,16 +4433,16 @@
         },
         {
             "name": "symfony/messenger",
-            "version": "v6.4.6",
+            "version": "v6.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/messenger.git",
-                "reference": "4b7f073d341f6d0b431a1c643b40aa21506ca820"
+                "reference": "5b2a0b391a670727b0f511452d0bf646235cb388"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/messenger/zipball/4b7f073d341f6d0b431a1c643b40aa21506ca820",
-                "reference": "4b7f073d341f6d0b431a1c643b40aa21506ca820",
+                "url": "https://api.github.com/repos/symfony/messenger/zipball/5b2a0b391a670727b0f511452d0bf646235cb388",
+                "reference": "5b2a0b391a670727b0f511452d0bf646235cb388",
                 "shasum": ""
             },
             "require": {
@@ -4500,7 +4500,7 @@
             "description": "Helps applications send and receive messages to/from other applications or via message queues",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/messenger/tree/v6.4.6"
+                "source": "https://github.com/symfony/messenger/tree/v6.4.7"
             },
             "funding": [
                 {
@@ -4516,7 +4516,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-03-19T11:56:30+00:00"
+            "time": "2024-04-18T09:22:46+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -5083,16 +5083,16 @@
         },
         {
             "name": "symfony/redis-messenger",
-            "version": "v7.0.4",
+            "version": "v7.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/redis-messenger.git",
-                "reference": "0f5fc1c53079fa0028fbbe1491f5c9c9cdf478df"
+                "reference": "cf673d870c500c3a6d9ffe613b4a9aa68812b722"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/redis-messenger/zipball/0f5fc1c53079fa0028fbbe1491f5c9c9cdf478df",
-                "reference": "0f5fc1c53079fa0028fbbe1491f5c9c9cdf478df",
+                "url": "https://api.github.com/repos/symfony/redis-messenger/zipball/cf673d870c500c3a6d9ffe613b4a9aa68812b722",
+                "reference": "cf673d870c500c3a6d9ffe613b4a9aa68812b722",
                 "shasum": ""
             },
             "require": {
@@ -5130,7 +5130,7 @@
             "description": "Symfony Redis extension Messenger Bridge",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/redis-messenger/tree/v7.0.4"
+                "source": "https://github.com/symfony/redis-messenger/tree/v7.0.7"
             },
             "funding": [
                 {
@@ -5146,7 +5146,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-02-07T14:11:38+00:00"
+            "time": "2024-04-28T11:44:19+00:00"
         },
         {
             "name": "symfony/service-contracts",
