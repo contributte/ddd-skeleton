@@ -4205,16 +4205,16 @@
         },
         {
             "name": "symfony/doctrine-messenger",
-            "version": "v7.1.0",
+            "version": "v7.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/doctrine-messenger.git",
-                "reference": "0c91721a6c75675e260a852f3c5cfce40159ae15"
+                "reference": "d4195a8ede84526328abe12683b4479fc2589461"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/doctrine-messenger/zipball/0c91721a6c75675e260a852f3c5cfce40159ae15",
-                "reference": "0c91721a6c75675e260a852f3c5cfce40159ae15",
+                "url": "https://api.github.com/repos/symfony/doctrine-messenger/zipball/d4195a8ede84526328abe12683b4479fc2589461",
+                "reference": "d4195a8ede84526328abe12683b4479fc2589461",
                 "shasum": ""
             },
             "require": {
@@ -4257,7 +4257,7 @@
             "description": "Symfony Doctrine Messenger Bridge",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/doctrine-messenger/tree/v7.1.0"
+                "source": "https://github.com/symfony/doctrine-messenger/tree/v7.1.1"
             },
             "funding": [
                 {
@@ -4273,7 +4273,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-02T09:27:58+00:00"
+            "time": "2024-05-31T14:57:53+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
