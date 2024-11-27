@@ -4138,16 +4138,16 @@
         },
         {
             "name": "symfony/deprecation-contracts",
-            "version": "v3.5.0",
+            "version": "v3.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
-                "reference": "0e0d29ce1f20deffb4ab1b016a7257c4f1e789a1"
+                "reference": "74c71c939a79f7d5bf3c1ce9f5ea37ba0114c6f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/0e0d29ce1f20deffb4ab1b016a7257c4f1e789a1",
-                "reference": "0e0d29ce1f20deffb4ab1b016a7257c4f1e789a1",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/74c71c939a79f7d5bf3c1ce9f5ea37ba0114c6f6",
+                "reference": "74c71c939a79f7d5bf3c1ce9f5ea37ba0114c6f6",
                 "shasum": ""
             },
             "require": {
@@ -4185,7 +4185,7 @@
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.5.0"
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.5.1"
             },
             "funding": [
                 {
@@ -4201,7 +4201,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-04-18T09:32:20+00:00"
+            "time": "2024-09-25T14:20:29+00:00"
         },
         {
             "name": "symfony/doctrine-messenger",
@@ -4433,16 +4433,16 @@
         },
         {
             "name": "symfony/messenger",
-            "version": "v6.4.13",
+            "version": "v6.4.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/messenger.git",
-                "reference": "5cd75048611f7a86a7dca7f1cf7089d0d7ef90ff"
+                "reference": "b20092876c3d23c172a6469f9c0d7ef1de445257"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/messenger/zipball/5cd75048611f7a86a7dca7f1cf7089d0d7ef90ff",
-                "reference": "5cd75048611f7a86a7dca7f1cf7089d0d7ef90ff",
+                "url": "https://api.github.com/repos/symfony/messenger/zipball/b20092876c3d23c172a6469f9c0d7ef1de445257",
+                "reference": "b20092876c3d23c172a6469f9c0d7ef1de445257",
                 "shasum": ""
             },
             "require": {
@@ -4500,7 +4500,7 @@
             "description": "Helps applications send and receive messages to/from other applications or via message queues",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/messenger/tree/v6.4.13"
+                "source": "https://github.com/symfony/messenger/tree/v6.4.16"
             },
             "funding": [
                 {
@@ -4516,7 +4516,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-25T14:18:03+00:00"
+            "time": "2024-11-25T02:02:03+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -5082,16 +5082,16 @@
         },
         {
             "name": "symfony/redis-messenger",
-            "version": "v7.1.6",
+            "version": "v7.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/redis-messenger.git",
-                "reference": "2aa99d7f8746a5bd0d9d1864413c60c8995e72d1"
+                "reference": "8513247ea771a66e3ead9b22bef028cece353ce2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/redis-messenger/zipball/2aa99d7f8746a5bd0d9d1864413c60c8995e72d1",
-                "reference": "2aa99d7f8746a5bd0d9d1864413c60c8995e72d1",
+                "url": "https://api.github.com/repos/symfony/redis-messenger/zipball/8513247ea771a66e3ead9b22bef028cece353ce2",
+                "reference": "8513247ea771a66e3ead9b22bef028cece353ce2",
                 "shasum": ""
             },
             "require": {
@@ -5129,7 +5129,7 @@
             "description": "Symfony Redis extension Messenger Bridge",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/redis-messenger/tree/v7.1.6"
+                "source": "https://github.com/symfony/redis-messenger/tree/v7.1.9"
             },
             "funding": [
                 {
@@ -5145,7 +5145,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-25T14:20:29+00:00"
+            "time": "2024-11-26T09:50:51+00:00"
         },
         {
             "name": "symfony/service-contracts",
