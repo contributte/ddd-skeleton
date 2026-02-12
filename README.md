@@ -30,7 +30,7 @@ Main goal is to try DDD with [Nette](https://nette.org).
 
 ## Installation
 
-You will need `PHP 8.2+` and [Composer](https://getcomposer.org/).
+You will need `PHP 8.4+` and [Composer](https://getcomposer.org/).
 
 Create project using composer.
 
