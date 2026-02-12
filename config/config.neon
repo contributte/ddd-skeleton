@@ -52,7 +52,7 @@ nettrine.dbal:
 			password: %database.password%
 			dbname: %database.dbname%
 			port: %database.port%
-			serverVersion: 15
+			serverVersion: "15"
 
 nettrine.orm:
 	managers:
