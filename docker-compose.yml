@@ -2,7 +2,7 @@ version: '3.6'
 
 services:
   app:
-    image: dockette/web:php-82
+    image: dockette/web:php-84
     volumes:
       - .:/srv
     ports:
