@@ -28,7 +28,8 @@
     "nettrine/extra": "^0.2.0",
 
     "symfony/redis-messenger": "^7.0.2",
-    "symfony/doctrine-messenger": "^7.0.0"
+    "symfony/doctrine-messenger": "^7.0.0",
+    "symfony/var-exporter": "^7.0"
   },
   "require-dev": {
     "contributte/qa": "^0.4",
