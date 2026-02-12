@@ -38,33 +38,32 @@ extensions:
 
 	# Nettrine ORM
 	nettrine.orm: Nettrine\ORM\DI\OrmExtension
-	nettrine.orm.cache: Nettrine\ORM\DI\OrmCacheExtension
-	nettrine.orm.console: Nettrine\ORM\DI\OrmConsoleExtension(%consoleMode%)
-	nettrine.orm.attributes: Nettrine\ORM\DI\OrmAttributesExtension
 
 # ======================================
 # Extensions (config) ==================
 nettrine.dbal:
 	debug:
 		panel: %debugMode%
-	configuration:
-	connection:
-		driver: %database.driver%
-		host: %database.host%
-		user: %database.user%
-		password: %database.password%
-		dbname: %database.dbname%
-		port: %database.port%
-		serverVersion: 15
+	connections:
+		default:
+			driver: %database.driver%
+			host: %database.host%
+			user: %database.user%
+			password: %database.password%
+			dbname: %database.dbname%
+			port: %database.port%
+			serverVersion: 15
 
 nettrine.orm:
-	entityManagerDecoratorClass: Nettrine\Extra\EntityManager
-	configuration:
-		autoGenerateProxyClasses: %debugMode%
-
-nettrine.orm.attributes:
-	mapping:
-		App\Domain: %appDir%/Domain
+	managers:
+		default:
+			connection: default
+			entityManagerDecoratorClass: Nettrine\Extra\EntityManager
+			autoGenerateProxyClasses: %debugMode%
+			mapping:
+				App\Domain:
+					directories: [%appDir%/Domain]
+					namespace: App\Domain
 
 nettrine.migrations:
 	table: doctrine_migrations
