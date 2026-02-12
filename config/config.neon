@@ -35,7 +35,6 @@ extensions:
 
 	# Nettrine DBAL
 	nettrine.dbal: Nettrine\DBAL\DI\DbalExtension
-	nettrine.dbal.console: Nettrine\DBAL\DI\DbalConsoleExtension(%consoleMode%)
 
 	# Nettrine ORM
 	nettrine.orm: Nettrine\ORM\DI\OrmExtension
