@@ -1,86 +1,56 @@
-![](https://heatbadger.now.sh/github/readme/contributte/ddd-skeleton/)
+# DDD Skeleton
 
-<p align=center>
-  <a href="https://github.com/contributte/ddd-skeleton/actions"><img src="https://badgen.net/github/checks/contributte/ddd-skeleton/master"></a>
-  <a href="https://coveralls.io/r/contributte/ddd-skeleton"><img src="https://badgen.net/coveralls/c/github/contributte/ddd-skeleton"></a>
-  <a href="https://packagist.org/packages/contributte/ddd-skeleton"><img src="https://badgen.net/packagist/dm/contributte/ddd-skeleton"></a>
-  <a href="https://packagist.org/packages/contributte/ddd-skeleton"><img src="https://badgen.net/packagist/v/contributte/ddd-skeleton"></a>
-</p>
-<p align=center>
-  <a href="https://packagist.org/packages/contributte/ddd-skeleton"><img src="https://badgen.net/packagist/php/contributte/ddd-skeleton"></a>
-  <a href="https://github.com/contributte/ddd-skeleton"><img src="https://badgen.net/github/license/contributte/ddd-skeleton"></a>
-  <a href="https://bit.ly/ctteg"><img src="https://badgen.net/badge/support/gitter/cyan"></a>
-  <a href="https://bit.ly/cttfo"><img src="https://badgen.net/badge/support/forum/yellow"></a>
-  <a href="https://contributte.org/partners.html"><img src="https://badgen.net/badge/sponsor/donations/F96854"></a>
-</p>
+Domain-driven design example project built with Nette, Nettrine, and Contributte Messenger.
 
-<p align=center>
-Website 🚀 <a href="https://contributte.org">contributte.org</a> | Contact 👨🏻‍💻 <a href="https://f3l1x.io">f3l1x.io</a> | Twitter 🐦 <a href="https://twitter.com/contributte">@contributte</a>
-</p>
+## Requirements
 
-<p align=center>
-	<img src="https://api.microlink.io?url=https%3A%2F%2Fexamples.contributte.org%2Fddd-skeleton%2F&overlay.browser=light&screenshot=true&meta=false&embed=screenshot.url"></img>
-</p>
+- PHP 8.4 or newer
+- [Composer](https://getcomposer.org/)
+- `make` for the provided development commands
+- Docker Compose for the PostgreSQL stack
 
------
-
-## Goal
-
-Main goal is to try DDD with [Nette](https://nette.org).
-
-## Installation
-
-You will need `PHP 8.4+` and [Composer](https://getcomposer.org/).
-
-Create project using composer.
+## Create a project
 
 ```bash
-composer create-project -s dev contributte/ddd-skeleton acme
-```
-
-Now you have application installed. It's time to run it.
-
-## Startup
-
-### HTTP
-
-You need to spin webserver to display your application.
-
-```bash
-make dev
-# php -S 0.0.0.0:8000 -t www
-```
-
-Then visit [http://localhost:8000](http://localhost:8000) in your browser.
-
-### Database
-
-You need to execute migrations.
-
-```bash
+composer create-project contributte/ddd-skeleton acme
+cd acme
+make init
+make project
 make migrate
-# NETTE_DEBUG=1 bin/console migrations:migrate --no-interaction
+make dev
 ```
 
-### Docker
+`make init` creates `config/local.neon` from `config/local.neon.example`. The development server listens on `http://localhost:8000`.
 
-You need to spin docker containers with redis and postgres to store & read messages according to your transports.
+## Docker Compose
+
+Start the application and PostgreSQL with:
 
 ```bash
 make docker-up
-# docker compose up
 ```
+
+The application is available at `http://localhost:8080`, PostgreSQL at `localhost:5432`, and Adminer at `http://localhost:8081`. PostgreSQL uses database `contributte`, user `postgres`, and password `contributte`.
+
+The default database configuration in `config/config.neon` uses host `database`, which matches the Compose service. Update the database parameters for a non-Compose installation.
+
+## Database and messages
+
+Run pending migrations with:
+
+```bash
+make migrate
+```
+
+`make build` drops the current schema and then runs migrations. The default Messenger routes use the synchronous transport. `make consume` runs `bin/console messenger:consume redis`; configure a Redis transport before using this consumer. Redis is not part of `docker-compose.yml`.
 
 ## Development
 
-See [how to contribute](https://contributte.org/contributing.html) to this package.
-
-This package is currently maintaining by these authors.
-
-<a href="https://github.com/f3l1x">
-    <img width="80" height="80" src="https://avatars2.githubusercontent.com/u/538058?v=3&s=80">
-</a>
-
------
-
-Consider to [support](https://contributte.org/partners.html) **contributte** development team. Also thank you for using this project.
+```bash
+make qa       # coding standard and static analysis
+make tests    # Nette Tester suite
+make cs       # coding standard check
+make csf      # fix coding standard issues
+make phpstan  # static analysis
+make coverage # generate coverage.xml
+```
