@@ -1,86 +1,69 @@
-![](https://heatbadger.now.sh/github/readme/contributte/ddd-skeleton/)
+# Contributte DDD Skeleton
 
-<p align=center>
-  <a href="https://github.com/contributte/ddd-skeleton/actions"><img src="https://badgen.net/github/checks/contributte/ddd-skeleton/master"></a>
-  <a href="https://coveralls.io/r/contributte/ddd-skeleton"><img src="https://badgen.net/coveralls/c/github/contributte/ddd-skeleton"></a>
-  <a href="https://packagist.org/packages/contributte/ddd-skeleton"><img src="https://badgen.net/packagist/dm/contributte/ddd-skeleton"></a>
-  <a href="https://packagist.org/packages/contributte/ddd-skeleton"><img src="https://badgen.net/packagist/v/contributte/ddd-skeleton"></a>
-</p>
-<p align=center>
-  <a href="https://packagist.org/packages/contributte/ddd-skeleton"><img src="https://badgen.net/packagist/php/contributte/ddd-skeleton"></a>
-  <a href="https://github.com/contributte/ddd-skeleton"><img src="https://badgen.net/github/license/contributte/ddd-skeleton"></a>
-  <a href="https://bit.ly/ctteg"><img src="https://badgen.net/badge/support/gitter/cyan"></a>
-  <a href="https://bit.ly/cttfo"><img src="https://badgen.net/badge/support/forum/yellow"></a>
-  <a href="https://contributte.org/partners.html"><img src="https://badgen.net/badge/sponsor/donations/F96854"></a>
+A PHP 8.4+ starter project for experimenting with domain-driven design using Nette, Doctrine/Nettrine, and Contributte libraries.
+
+<p align="center">
+  <a href="https://github.com/contributte/ddd-skeleton/actions"><img src="https://badgen.net/github/checks/contributte/ddd-skeleton/master" alt="GitHub checks"></a>
+  <a href="https://coveralls.io/r/contributte/ddd-skeleton"><img src="https://badgen.net/coveralls/c/github/contributte/ddd-skeleton" alt="Coverage"></a>
+  <a href="https://packagist.org/packages/contributte/ddd-skeleton"><img src="https://badgen.net/packagist/v/contributte/ddd-skeleton" alt="Packagist version"></a>
+  <a href="https://github.com/contributte/ddd-skeleton"><img src="https://badgen.net/github/license/contributte/ddd-skeleton" alt="MIT license"></a>
 </p>
 
-<p align=center>
-Website 🚀 <a href="https://contributte.org">contributte.org</a> | Contact 👨🏻‍💻 <a href="https://f3l1x.io">f3l1x.io</a> | Twitter 🐦 <a href="https://twitter.com/contributte">@contributte</a>
+<p align="center">
+  <img src="https://api.microlink.io?url=https%3A%2F%2Fexamples.contributte.org%2Fddd-skeleton%2F&overlay.browser=light&screenshot=true&meta=false&embed=screenshot.url" alt="DDD Skeleton screenshot">
 </p>
 
-<p align=center>
-	<img src="https://api.microlink.io?url=https%3A%2F%2Fexamples.contributte.org%2Fddd-skeleton%2F&overlay.browser=light&screenshot=true&meta=false&embed=screenshot.url"></img>
-</p>
+## Quick Start
 
------
+**Requirements:** PHP 8.4+, [Composer](https://getcomposer.org/), Docker Compose, and a free local port `8080`.
 
-## Goal
-
-Main goal is to try DDD with [Nette](https://nette.org).
-
-## Installation
-
-You will need `PHP 8.4+` and [Composer](https://getcomposer.org/).
-
-Create project using composer.
+Create the project. This installs its Composer dependencies; do not run `composer install` afterward.
 
 ```bash
 composer create-project -s dev contributte/ddd-skeleton acme
+cd acme
 ```
 
-Now you have application installed. It's time to run it.
-
-## Startup
-
-### HTTP
-
-You need to spin webserver to display your application.
+Create the ignored local configuration file and writable Nette directories:
 
 ```bash
-make dev
-# php -S 0.0.0.0:8000 -t www
+make init
+make setup
 ```
 
-Then visit [http://localhost:8000](http://localhost:8000) in your browser.
-
-### Database
-
-You need to execute migrations.
-
-```bash
-make migrate
-# NETTE_DEBUG=1 bin/console migrations:migrate --no-interaction
-```
-
-### Docker
-
-You need to spin docker containers with redis and postgres to store & read messages according to your transports.
+Start the application and PostgreSQL 15. Keep this process running:
 
 ```bash
 make docker-up
-# docker compose up
 ```
 
-## Development
+In another terminal, apply the tracked migration from inside the `app` container. The default configuration connects to the Compose service hostname `database` and database `contributte`.
 
-See [how to contribute](https://contributte.org/contributing.html) to this package.
+```bash
+docker compose exec app env NETTE_DEBUG=1 php bin/console migrations:migrate --no-interaction
+```
 
-This package is currently maintaining by these authors.
+Open <http://localhost:8080>. The repository-backed, unexecuted first-success flow is to submit the **Create user** form, then see the new username in **List users**.
 
-<a href="https://github.com/f3l1x">
-    <img width="80" height="80" src="https://avatars2.githubusercontent.com/u/538058?v=3&s=80">
-</a>
+## Security Note
 
------
+This is a development skeleton. User passwords are hashed before persistence, but the demonstration page renders the stored password hash in its user table. Do not enter real passwords or expose this application publicly without changing that behavior. The Compose PostgreSQL password (`contributte`) is a tracked development value, not a production credential.
 
-Consider to [support](https://contributte.org/partners.html) **contributte** development team. Also thank you for using this project.
+## Quality Checks
+
+Run the test suite with:
+
+```bash
+make tests
+```
+
+## Project
+
+- Organization and source: [Contributte / ddd-skeleton](https://github.com/contributte/ddd-skeleton)
+- Website: [contributte.org](https://contributte.org)
+- Support: [Gitter](https://bit.ly/ctteg) and [forum](https://bit.ly/cttfo)
+- Contributions: [Contributte contribution guide](https://contributte.org/contributing.html)
+
+## License
+
+MIT. See [LICENSE](LICENSE).
