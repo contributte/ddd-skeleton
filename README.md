@@ -1,66 +1,69 @@
-# DDD Skeleton
+# Contributte DDD Skeleton
 
-Domain-driven design example project built with Nette, Nettrine, and Contributte Messenger.
+A PHP 8.4+ starter project for experimenting with domain-driven design using Nette, Doctrine/Nettrine, and Contributte libraries.
 
-## Requirements
+<p align="center">
+  <a href="https://github.com/contributte/ddd-skeleton/actions"><img src="https://badgen.net/github/checks/contributte/ddd-skeleton/master" alt="GitHub checks"></a>
+  <a href="https://coveralls.io/r/contributte/ddd-skeleton"><img src="https://badgen.net/coveralls/c/github/contributte/ddd-skeleton" alt="Coverage"></a>
+  <a href="https://packagist.org/packages/contributte/ddd-skeleton"><img src="https://badgen.net/packagist/v/contributte/ddd-skeleton" alt="Packagist version"></a>
+  <a href="https://github.com/contributte/ddd-skeleton"><img src="https://badgen.net/github/license/contributte/ddd-skeleton" alt="MIT license"></a>
+</p>
 
-- PHP 8.4 or newer
-- [Composer](https://getcomposer.org/)
-- `make` for the provided development commands
-- Docker Compose for the PostgreSQL stack
+<p align="center">
+  <img src="https://api.microlink.io?url=https%3A%2F%2Fexamples.contributte.org%2Fddd-skeleton%2F&overlay.browser=light&screenshot=true&meta=false&embed=screenshot.url" alt="DDD Skeleton screenshot">
+</p>
 
-## Quick start with Docker Compose
+## Quick Start
 
-The tracked Compose stack is the complete recommended development path: it provides the PostgreSQL service expected by the default configuration.
+**Requirements:** PHP 8.4+, [Composer](https://getcomposer.org/), Docker Compose, and a free local port `8080`.
+
+Create the project. This installs its Composer dependencies; do not run `composer install` afterward.
 
 ```bash
-composer create-project contributte/ddd-skeleton acme
+composer create-project -s dev contributte/ddd-skeleton acme
 cd acme
+```
+
+Create the ignored local configuration file and writable Nette directories:
+
+```bash
 make init
+make setup
+```
+
+Start the application and PostgreSQL 15. Keep this process running:
+
+```bash
 make docker-up
 ```
 
-In another terminal, run the migrations after PostgreSQL is available:
+In another terminal, apply the tracked migration from inside the `app` container. The default configuration connects to the Compose service hostname `database` and database `contributte`.
 
 ```bash
-docker compose exec app make migrate
+docker compose exec app env NETTE_DEBUG=1 php bin/console migrations:migrate --no-interaction
 ```
 
-Open <http://localhost:8080>, submit the user form, and the application reports `User created, thanks` when the synchronous command succeeds.
+Open <http://localhost:8080>. The repository-backed, unexecuted first-success flow is to submit the **Create user** form, then see the new username in **List users**.
 
-`make init` creates `config/local.neon` from `config/local.neon.example`. The Compose application is available at `http://localhost:8080`, PostgreSQL at `localhost:5432`, and Adminer at `http://localhost:8081`. PostgreSQL uses database `contributte`, user `postgres`, and password `contributte`.
+## Security Note
 
-## Native PHP server
+This is a development skeleton. User passwords are hashed before persistence, but the demonstration page renders the stored password hash in its user table. Do not enter real passwords or expose this application publicly without changing that behavior. The Compose PostgreSQL password (`contributte`) is a tracked development value, not a production credential.
 
-For a native server, first configure a local PostgreSQL service in `config/local.neon`; the checked-in default uses the Compose hostname `database`. Then install and prepare the project, run migrations, and start the server:
+## Quality Checks
+
+Run the test suite with:
 
 ```bash
-make project
-make migrate
-make dev
+make tests
 ```
 
-The development server listens on <http://localhost:8000>.
+## Project
 
-## Database and messages
+- Organization and source: [Contributte / ddd-skeleton](https://github.com/contributte/ddd-skeleton)
+- Website: [contributte.org](https://contributte.org)
+- Support: [Gitter](https://bit.ly/ctteg) and [forum](https://bit.ly/cttfo)
+- Contributions: [Contributte contribution guide](https://contributte.org/contributing.html)
 
-Run pending migrations with:
+## License
 
-```bash
-make migrate
-```
-
-`make build` drops the current schema and then runs migrations.
-
-The default Messenger routes use the synchronous `sync://` transport, so creating a user is handled during the request and does not require a consumer. `make consume` is an optional advanced Redis consumer (`bin/console messenger:consume redis`): configure a Redis transport before using it. Redis is not part of `docker-compose.yml`.
-
-## Development
-
-```bash
-make qa       # coding standard and static analysis
-make tests    # Nette Tester suite
-make cs       # coding standard check
-make csf      # fix coding standard issues
-make phpstan  # static analysis
-make coverage # generate coverage.xml
-```
+MIT. See [LICENSE](LICENSE).
